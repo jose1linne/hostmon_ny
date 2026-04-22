@@ -36,22 +36,22 @@ Vi kommer til at skrive her, hvem der koder hvad:
 
 ### Komponenter:
 
-Card.astro - Josefine
+Card.astro - Denzel
 Footer.astro - Laila
-Navigationbar.astro - Denzel
+Navigationbar.astro - Josefine
 CTA - Josefine
 
 ### pages:
 
 Forsiden - Laila
-Artist - Josefine
-ArtisterProgram - Laila
-Frivillige -Denzel
-OmOs - Denzel
+Artist - Denzel
+ArtisterProgram - Denzel
+Frivillige - Josefine
+OmOs - Josefine
 
 ## Database struktur
 
-vi kommer til at bruge superbase til at holde styr på vores data. det er josefine som styrer vores superbase.
+vi kommer til at bruge superbase til at holde styr på vores data. det er Denzel som styrer vores superbase.
 
 ## Hvor placerer I HTML, CSS og JavaScript til fx detaljevisning og listevisning?
 

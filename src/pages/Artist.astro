@@ -1,3 +1,28 @@
 ---
 import "../css/global.css";
+import "../css/global.css";
+// import Card from "../components/Card.astro";
+
+const url = `${import.meta.env.SUPABASE_URL}/rest/v1/artists?select=*`;
+const apiKey = import.meta.env.SUPABASE_PUBLISHABLE_KEY;
+// const { artists } = Astro.props;
+
+const options = {
+  headers: {
+    apikey: apiKey,
+  },
+};
+
+type Artists = {
+  id: number;
+  name: string;
+};
+
+const data: Artists[] = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
 ---
+
+<body>
+  <article></article>
+</body>
