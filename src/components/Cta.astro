@@ -1,0 +1,22 @@
+---
+const { text, href } = Astro.props;
+---
+
+<a href={href} class="button">
+  {text}
+</a>
+
+<style>
+  .button {
+    text-align: center;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: var(--primary-color);
+    color: var(--primary-bg-color);
+    border-radius: 25px 25px 25px 25px;
+    text-decoration: none;
+    font-family: "Archivo Narrow", sans-serif;
+    text-transform: uppercase;
+  }
+</style>

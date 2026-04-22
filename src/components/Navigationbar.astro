@@ -1,0 +1,35 @@
+---
+const { text, href } = Astro.props;
+import Button from "../components/Cta.astro";
+---
+
+<header>
+  <nav class="navbar">
+    <div><img class="logo" src="public/ikonerOgLogo/logo.webp" alt="" /></div>
+
+    <ul class="knapper">
+      <Button text="billetter" href="/#" />
+      <Button text="Om os" href="/OmOs" />
+      <Button text="Frivillig" href="/Frivillig" />
+      <Button text="Artister" href="/ArtisterProgram" />
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .logo {
+    max-width: 75px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .knapper {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+</style>
