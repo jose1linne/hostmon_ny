@@ -1,0 +1,23 @@
+---
+const { artists } = Astro.props;
+---
+
+<a href={`/Artist?id=${artists.id}`} class="card">
+  <img src={artists.image_url} alt={artists.name} />
+  <h2>{artists.name}</h2>
+</a>
+
+<style>
+.card {
+  display: block;
+  text-decoration: none;
+  color: black;
+  max-width: 200px;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+</style>
