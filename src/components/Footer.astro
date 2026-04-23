@@ -33,35 +33,35 @@ const { text } = Astro.props;
   </section>
 
   <div><img class="logofooter" src="public/ikonerOgLogo/logoFooter.webp" alt="" /></div>
+
+  <style>
+    .grid-1-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+      max-width: 750px;
+      margin-left: 400px;
+      padding-top: 150px;
+    }
+
+    .footerikon {
+      max-width: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      list-style: none;
+      line-height: 50px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .logofooter {
+      opacity: 50%;
+
+      max-width: 600px;
+    }
+  </style>
 </footer>
-
-<style>
-  .grid-1-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
-    max-width: 750px;
-    margin-left: 400px;
-    padding-top: 150px;
-  }
-
-  .footerikon {
-    max-width: 30px;
-    margin-bottom: 25px;
-  }
-
-  li {
-    list-style: none;
-    line-height: 50px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  .logofooter {
-    opacity: 50%;
-
-    max-width: 600px;
-  }
-</style>

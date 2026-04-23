@@ -1,6 +1,7 @@
 ---
 import "../css/global.css";
-import Navbar from "../components/Navigationbar.astro";
+// import Navbar from "../components/Navigationbar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <header>
@@ -11,24 +12,25 @@ import Navbar from "../components/Navigationbar.astro";
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-
-  <Navbar />
+  <!-- 
+  <Navbar /> -->
 </header>
 
-<body>
-  <section class="contentFrivillig">
-    <h1 class="overskrift">FRIVILLIG</h1>
+<Layout>
+  <body>
+    <section class="contentFrivillig">
+      <h1 class="overskrift">FRIVILLIG</h1>
 
-    <div>
-      <p>Vi skal bruge en masse hjælp til at lave festival et helt nyt sted. Alle på festivalen arbejder frivilligt, og vi synes, at vi har en drøm af et fællesskab. Der er mange gengangere fra år og til år, og flere af arrangørerne havde deres debut på festivalen som frivillige i afviklingen.  Vi håber på at se en masse kendte ansigter, men vi har i den grad også plads til nye venner med stærke arme, hurtige hoveder og/eller varme hjerter, så tøv ikke med at melde dig til. Billetpriserne er også steget, så der er kun gode grunde.</p>
-    </div>
+      <div>
+        <p>Vi skal bruge en masse hjælp til at lave festival et helt nyt sted. Alle på festivalen arbejder frivilligt, og vi synes, at vi har en drøm af et fællesskab. Der er mange gengangere fra år og til år, og flere af arrangørerne havde deres debut på festivalen som frivillige i afviklingen.  Vi håber på at se en masse kendte ansigter, men vi har i den grad også plads til nye venner med stærke arme, hurtige hoveder og/eller varme hjerter, så tøv ikke med at melde dig til. Billetpriserne er også steget, så der er kun gode grunde.</p>
+      </div>
 
-    <div class="frivilligImg"><img src="public/imgs/frivilligImg.webp" alt="frivilligImg" /></div>
+      <div class="frivilligImg"><img src="public/imgs/frivilligImg.webp" alt="frivilligImg" /></div>
 
-    <div><p>Vi har brug for hjælp i dagene før, under og efter festivalen. En tjans består af 2x6 timer, og man får mad, gavekort til baren og festivalbillet retur. Vi holder også en frivilligfest en gang om året, ligesom man får adgang til Impact Festival 2026.  Samtidig er det vigtigt, at man er bevidst om, at det stadigvæk er et arbejde, og at vi forventer en dedikeret indsats i festivalens ånd. Festivalen kan slet ikke lade sig gøre uden frivillige, så man påtager sig et stort ansvar, men til gengæld får man uendeligt gode tider igen.  Skriv en mail til frivillig@hoestmoen.dk, hvis du er interesseret i at være med til at sætte dit præg på festivalen.</p></div>
-  </section>
-</body>
-
+      <div><p>Vi har brug for hjælp i dagene før, under og efter festivalen. En tjans består af 2x6 timer, og man får mad, gavekort til baren og festivalbillet retur. Vi holder også en frivilligfest en gang om året, ligesom man får adgang til Impact Festival 2026.  Samtidig er det vigtigt, at man er bevidst om, at det stadigvæk er et arbejde, og at vi forventer en dedikeret indsats i festivalens ånd. Festivalen kan slet ikke lade sig gøre uden frivillige, så man påtager sig et stort ansvar, men til gengæld får man uendeligt gode tider igen.  Skriv en mail til frivillig@hoestmoen.dk, hvis du er interesseret i at være med til at sætte dit præg på festivalen.</p></div>
+    </section>
+  </body>
+</Layout>
 <style>
   .contentFrivillig {
     margin: 0 auto;
