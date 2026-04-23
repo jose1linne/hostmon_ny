@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
+import "../css/global.css";
 ---
 
 <Layout titel="Artist">
-  <article>
+  <div>
     <h1 id="name">Loading...</h1>
     <img id="image" />
     <p id="description"></p>
-  </article>
+  </div>
+  <div>
+Socials:
+  </div>
 <script>
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
@@ -30,3 +33,5 @@ import Layout from "../layouts/Layout.astro";
     
 </script>
 </Layout>
+
+<style></style>
