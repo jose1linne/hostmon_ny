@@ -24,7 +24,7 @@ const data: Artists[] = await fetch(url, options).then((res) => res.json());
 
 <Layout titel="Høsten">
     <div class="overskrift">
-     <h1>ARTISTER</h1>
+     <h2>ARTISTER</h2>
      </div>
     <div class="grid-1-3">
   {data.map((artists) => <Card artists={artists} />)}
