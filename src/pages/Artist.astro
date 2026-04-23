@@ -1,28 +1,37 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import "../css/global.css";
-import "../css/global.css";
-// import Card from "../components/Card.astro";
-
-const url = `${import.meta.env.SUPABASE_URL}/rest/v1/artists?select=*`;
-const apiKey = import.meta.env.SUPABASE_PUBLISHABLE_KEY;
-// const { artists } = Astro.props;
-
-const options = {
-  headers: {
-    apikey: apiKey,
-  },
-};
-
-type Artists = {
-  id: number;
-  name: string;
-};
-
-const data: Artists[] = await fetch(url, options).then((res) => res.json());
-
-console.log(data);
 ---
 
-<body>
-  <article></article>
-</body>
+<Layout titel="Artist">
+  <div>
+    <h1 id="name">Loading...</h1>
+    <img id="image" />
+    <p id="description"></p>
+  </div>
+  <div>
+Socials:
+  </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  const url = `${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/artists?id=eq.${id}&select=*`;
+
+  fetch(url, {
+    headers: {
+      apikey: import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY,
+    },
+  })
+    .then(res => res.json())
+    .then(([artists]) => {
+      document.querySelector("#name").textContent = artists.name;
+      document.querySelector("#image").src = artists.image_url;
+      document.querySelector("#description").textContent = artists.description;
+    });
+    console.log("ID fra URL:", id);
+    
+</script>
+</Layout>
+
+<style></style>

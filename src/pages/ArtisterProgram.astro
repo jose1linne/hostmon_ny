@@ -1,3 +1,38 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import "../css/global.css";
+import Card from "../components/Card.astro";
+
+const url = `${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/artists?select=*`;
+const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
+const options = {
+  headers: {
+    apikey: apiKey,
+  },
+};
+
+type Artists = {
+  id: number;
+  name: string;
+  description: string;
+  image_url: string;
+};
+
+const data: Artists[] = await fetch(url, options).then((res) => res.json());
 ---
+
+<Layout titel="Høsten">
+    <div class="grid-1-3">
+  {data.map((artists) => <Card artists={artists} />)}
+  </div>
+</Layout>
+
+<style>
+      .grid-1-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+</style>

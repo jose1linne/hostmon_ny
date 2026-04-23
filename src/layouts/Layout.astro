@@ -1,0 +1,19 @@
+---
+import Navigationbar from "../components/Navigationbar.astro";
+
+const { titel } = Astro.props;
+---
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{titel}</title>
+  </head>
+
+  <body>
+    <Navigationbar></Navigationbar>
+    <slot />
+  </body>
+</html>
