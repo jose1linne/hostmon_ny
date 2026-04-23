@@ -2,11 +2,75 @@
 import "../css/global.css";
 import Button from "../components/Cta.astro";
 import Navbar from "../components/Navigationbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <header>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+
   <Navbar />
 </header>
-<body>
-  <!-- <Button text="Frivillig" href="/Frivillig" /> -->
-</body>
+
+<main>
+  <section class="contentFrivillig">
+    <h1 class="overskrift">OM OS</h1>
+    <div>
+      <p>
+        Billetterne er i salg nu! Priserne stiger med inflationen på æstetik, alkohol og gebyrer, men vi lover, at kvaliteten og oplevelsen følger med – med pengene-tilbage-garanti for lykke. Navnet? Det finder vi ud af. Indtil videre er vi de samme – for man kan tage festivalen ud af Møn, men ikke Møn ud af festivalen. Det er den syvende Høst Møn på ni år. Hverken pandemier eller lokale markfirben kan stoppe os i at skabe støjende fællesskaber med jer. Vi er stadig sommerens sidste skrig med uændrede ambitioner: en musikfestival for folk, der elsker både musik og festival – og som faktisk lytter. Der kommer mindst 12 bands, økologisk fadøl, lokal gin og fællesspisning under kulørte lamper. Havudsigt, stjernehimmel og plads til at være, som du vil – bare du ikke snakker foran scenen. Vi
+        fandt ikke et nyt sted i 2025, så vi lavede i stedet musik til Impact Festival i Sydhavnen sammen med Trifolium. Det gør vi igen i 2026 – samtidig med Høst Møn.
+      </p>
+    </div>
+    <div class="OmOsImg"><img src="public/imgs/OmOsImg.webp" alt="OmOsImg" /></div>
+    <div>
+      <ul>
+        <li><h3>Kontakt:</h3></li>
+        <li><p>info@hoestmoen.dk</p></li>
+        <li><p>booking@hoestmoen.dk</p></li>
+        <li><p>produktion@hoestmoen.dk</p></li>
+        <li><p>frivillig@hoestmoen.dk</p></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<Footer text="© 2026 Mit site" />
+
+<style>
+  .contentFrivillig {
+    margin: 0 auto;
+    max-width: 750px;
+  }
+
+  .overskrift {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    font-size: 110px;
+  }
+
+  p {
+    line-height: 35px;
+    font-size: 20px;
+  }
+
+  ul {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+
+  .OmOsImg {
+    padding-top: 70px;
+  }
+
+  li {
+    list-style: none;
+  }
+</style>
+
+<!-- <Button text="Frivillig" href="/Frivillig" /> -->
