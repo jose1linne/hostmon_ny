@@ -5,16 +5,26 @@ import "../css/global.css";
 
 <Layout titel="Artist">
   <div class="container">
-    <h1 id="name">Loading...</h1>
+    <h1 id="name">Loading....</h1>
     <img id="image" />
     </div>
     <div class="grid-container">
     <p id="description"></p>
     <img id="cover" />
-    </div>
-  <div>
-Socials:
   </div>
+    <img class="play" src="/public/ikonerOgLogo/playLine.webp" alt="playLine">
+ </div>
+
+<div class="social-container">
+    <h2>SOCIALS</h2>
+    <div class="grid-1-3">
+        <img class="footerikon" src="public/ikonerOgLogo/instraIkon.webp" alt="instraIkon.webp" />
+        <img class="footerikon" src="public/ikonerOgLogo/snapchatIkon.webp" alt="snapchatIkon.webp" />
+        <img class="footerikon" src="public/ikonerOgLogo/tikTokIkon.webp" alt="tikTokIkon.webp" />
+    </div>
+</div>
+
+ 
 <script>
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
@@ -44,7 +54,11 @@ Socials:
     position: relative;
   }
   .grid-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 100px;
+    max-width: 750px;
+    margin: 0 auto;
   }
   #name {
     font-size: 110px;
@@ -53,4 +67,44 @@ Socials:
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  #description{
+    line-height: 35px;
+    padding-left: 10px;
+  }
+
+  .cover{
+    padding-top: ;
+  }
+
+  .play{
+    width: 750px;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  .footerikon{
+    max-width: 30px;
+    margin-bottom: 25px;
+  gap: 20px;
+  }
+
+  .grid-1-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100px;
+    margin: 0 auto;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .social-container{
+    display: block;
+    margin: auto;
+    padding-top: 40px;
+  }
+  .social-container h2 {
+    text-align: center;
+  }
+
 </style>
