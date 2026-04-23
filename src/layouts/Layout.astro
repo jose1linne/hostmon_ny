@@ -1,5 +1,6 @@
 ---
 import Navigationbar from "../components/Navigationbar.astro";
+import Footer from "../components/Footer.astro";
 
 const { titel } = Astro.props;
 ---
@@ -15,5 +16,6 @@ const { titel } = Astro.props;
   <body>
     <Navigationbar></Navigationbar>
     <slot />
+    <Footer></Footer>
   </body>
 </html>
