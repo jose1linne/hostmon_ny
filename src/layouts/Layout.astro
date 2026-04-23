@@ -1,4 +1,6 @@
 ---
+import Navigationbar from "../components/Navigationbar.astro";
+
 const { titel } = Astro.props;
 ---
 <!doctype html>
@@ -11,6 +13,7 @@ const { titel } = Astro.props;
   </head>
 
   <body>
+    <Navigationbar></Navigationbar>
     <slot />
   </body>
 </html>
