@@ -4,11 +4,14 @@ import "../css/global.css";
 ---
 
 <Layout titel="Artist">
-  <div>
+  <div class="container">
     <h1 id="name">Loading...</h1>
     <img id="image" />
+    </div>
+    <div class="grid-container">
     <p id="description"></p>
-  </div>
+    <img id="cover" />
+    </div>
   <div>
 Socials:
   </div>
@@ -26,12 +29,28 @@ Socials:
     .then(res => res.json())
     .then(([artists]) => {
       document.querySelector("#name").textContent = artists.name;
-      document.querySelector("#image").src = artists.image_url;
+      document.querySelector("#image").src = artists.hero_url;
       document.querySelector("#description").textContent = artists.description;
+      document.querySelector("#cover").src = artists.cover_img;
     });
     console.log("ID fra URL:", id);
     
 </script>
 </Layout>
 
-<style></style>
+<style>
+
+  .container {
+    position: relative;
+  }
+  .grid-container{
+    display: flex;
+  }
+  #name {
+    font-size: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
