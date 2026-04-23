@@ -1,0 +1,66 @@
+---
+const { text } = Astro.props;
+---
+
+<footer>
+  <section class="grid-1-3">
+    <div>
+      <ul>
+        <li><h2>OM HØSTEN</h2></li>
+        <li><p>Bliv frivillig</p></li>
+        <li><p>Sponsorer</p></li>
+        <li><p>Nyhedsbrev</p></li>
+      </ul>
+    </div>
+
+    <div>
+      <ul>
+        <li><h2>INFO</h2></li>
+        <li><p>Praktisk info</p></li>
+        <li><p>Program</p></li>
+        <li><p>Om os</p></li>
+      </ul>
+    </div>
+
+    <div>
+      <ul>
+        <li><h2>SOCIALS</h2></li>
+        <li><img class="footerikon" src="public/ikonerOgLogo/instraIkon.webp" alt="instraIkon.webp" /></li>
+        <li><img class="footerikon" src="public/ikonerOgLogo/snapchatIkon.webp" alt="snapchatIkon.webp" /></li>
+        <li><img class="footerikon" src="public/ikonerOgLogo/tikTokIkon.webp" alt="tikTokIkon.webp" /></li>
+      </ul>
+    </div>
+  </section>
+
+  <div><img class="logofooter" src="public/ikonerOgLogo/logoFooter.webp" alt="" /></div>
+</footer>
+
+<style>
+  .grid-1-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    max-width: 750px;
+    margin-left: 400px;
+    padding-top: 150px;
+  }
+
+  .footerikon {
+    max-width: 30px;
+    margin-bottom: 25px;
+  }
+
+  li {
+    list-style: none;
+    line-height: 50px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .logofooter {
+    opacity: 40%;
+    max-width: 600px;
+  }
+</style>
