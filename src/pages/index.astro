@@ -2,8 +2,12 @@
 import "../css/global.css";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
-
+import Navbar from "../components/Navigationbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Cta.astro";
 const url = `${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/artists?select=*&limit=3`;
+
+const { text, href } = Astro.props;
 
 const data = await fetch(url, {
   headers: {
@@ -12,61 +16,188 @@ const data = await fetch(url, {
 }).then((res) => res.json());
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="da">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>HØSTEN</title>
+    <title>Forside</title>
   </head>
 
   <body>
-    <h1>28-29 August</h1>
+    <header>
+      <nav class="navbar">
+        <h1>28-29 August</h1>
+
+        <ul class="knapper">
+          <Button text="billetter" href="/#" />
+          <Button text="Om os" href="/OmOs" />
+          <Button text="Frivillig" href="/Frivillig" />
+          <Button text="Artister" href="/ArtisterProgram" />
+        </ul>
+      </nav>
+    </header>
     <div class="video-wrapper">
       <video controls>
-        <source src="public/video/HØMØ 26 story 5_1.mov" />
+        <source src="public/video/Homo26story5_1.mov" type="video/mp4" />
       </video>
-    </div>
-    <div class="sidebar">
-      <video src="public/video/sideBar2.0.mp4"></video>
     </div>
 
     <section class="grid-1-3">
-        {data.map((artist) => (
-    <Card artists={artist} />
-  ))}
-     <!-- <img
-        class="artistscard"src="public/imgs/snuggleCard.webp" alt="billedet til artister"
-      />
-
-      <img
-        class="artistscard"src="public/imgs/snuggleCard.webp" alt="billedet til artister"
-      /> -->
+      {data.map((artist) => <Card artists={artist} />)}
     </section>
 
-    
+    <div class="knap_contianer">
+      <a class="knap" href="/Artister">Vis alle artister</a>
+    </div>
 
+    <section class="flexcards">
+      <div class="row">
+        <img class="img_flexcards" src="public/imgs/OmOsImg.webp" alt="OmOs" />
+        <div class="text">
+          <h3>OM OS</h3>
+          <p>
+            Billetterne er i salg nu. Priserne er steget lidt, men det samme er
+            kvaliteten – og der er garanti for en god oplevelse. Det er syvende
+            gang, Høst Møn afholdes, og intet stopper os fra at skabe stærke
+            fællesskaber med god musik. Festivalen byder på mindst 12 bands,
+            økologiske drikke, fællesspisning og en unik stemning med havudsigt
+            og stjernehimmel. Du kan tage af sted, som du vil – med eller uden
+            børn – så længe du respekterer musikken. I 2026 står vi både bag
+            Høst Møn og Impact Festival i Sydhavnen.
+          </p>
+        </div>
+      </div>
+
+      <div class="row reverse">
+        <img
+          class="img_flexcards"
+          src="public/imgs/frivilligImg.webp"
+          alt="Frivillig"
+        />
+        <div class="text">
+          <h3>BLIV FRIVILLIG</h3>
+
+          <p>
+            Vi har brug for frivillige til at skabe festivalen på et nyt sted.
+            Hele Høst Møn drives af fællesskab, med både gengangere og nye
+            ansigter. Man hjælper før, under og efter festivalen (2x6 timer) og
+            får mad, bar-gavekort og billet retur. Der er også frivilligfest og
+            adgang til Impact Festival 2026. Det er et ansvar, men også en
+            oplevelse med stærkt fællesskab og gode minder.
+          </p>
+        </div>
+      </div>
+    </section>
+    <Footer />
     <style>
-      .video-wrapper {
-        display: flex;
-        justify-content: center; /* center horizontally */
-        margin: 90px 0; /* space above & below */
+      . {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        z-index: 10;
       }
-      /* .artistscard {
-        width: 40%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      } */
-      
+      .video-wrapper {
+        position: static;
+        top: 0;
+        display: flex;
+
+        justify-content: center; /* centers horizontally */
+      }
+
+      .video-wrapper video {
+        width: 500%; /* 👈 makes it smaller */
+        max-width: 1700px; /* stops it getting too big */
+      }
       .grid-1-3 {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 150px;
+      }
+      .img_flexcards {
+        width: 40%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        padding: 6%;
+        max-width: 750px;
+      }
+      .flexcards {
+        padding: 70px;
+        margin: 100px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .text {
+        width: 50%;
+      }
+
+      .row.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .text_left {
+        width: 50%;
+      }
+
+      h3 {
+        color: red;
+        font-size: 40px;
+        font-family: "Archivo Narrow", sans-serif;
+        color: var(--primary-color);
+      }
+
+      p {
+        color: red;
+        font-size: 17px;
+        line-height: 2rem;
+        font-family: "Archivo Narrow", sans-serif;
+        color: var(--primary-color);
+      }
+      .knap {
+        text-align: center;
+        width: 200px;
+        padding: 16px;
+        background: var(--primary-color);
+        color: var(--primary-bg-color);
+        border-radius: 25px 25px 25px 25px;
+        text-decoration: none;
+        font-family: "Archivo Narrow", sans-serif;
+        text-transform: uppercase;
+        display: block;
+        margin: auto;
+        font-size: 16px;
+        margin-top: 100px;
+      }
+
+      .logo {
+        max-width: 75px;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 16px;
+      }
+
+      .knapper {
+        display: flex;
+        gap: 16px;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
       }
     </style>
   </body>
